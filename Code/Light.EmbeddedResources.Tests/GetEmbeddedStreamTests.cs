@@ -18,7 +18,7 @@ namespace Light.EmbeddedResources.Tests
         {
             Action act = () => typeof(GetEmbeddedStreamTests).GetEmbeddedStream(EmbeddedResourceNames.NonExisting);
 
-            CheckEmbeddedResourceNotFoundException(act);
+            act.CheckEmbeddedResourceNotFoundException();
         }
 
         [Fact]
@@ -33,14 +33,7 @@ namespace Light.EmbeddedResources.Tests
         {
             Action act = () => this.GetEmbeddedStream(EmbeddedResourceNames.NonExisting);
 
-            CheckEmbeddedResourceNotFoundException(act);
-        }
-
-        private static void CheckEmbeddedResourceNotFoundException(Action act)
-        {
-            var exceptionAssertion = act.Should().Throw<EmbeddedResourceNotFoundException>().Which;
-            exceptionAssertion.ParamName.Should().Be("resourceName");
-            exceptionAssertion.Message.Should().Contain($"There is no resource called \"{typeof(GetEmbeddedStreamTests).Namespace + "." + EmbeddedResourceNames.NonExisting}\" in assembly \"{typeof(GetEmbeddedStreamTests).Assembly}\".");
+            act.CheckEmbeddedResourceNotFoundException();
         }
     }
 }
