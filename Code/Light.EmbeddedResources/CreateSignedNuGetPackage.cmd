@@ -1,0 +1,1 @@
+dotnet pack Light.EmbeddedResources.csproj --configuration Release /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=bin\Light.EmbeddedResources.snk /p:ContinuousIntegrationBuild=true
