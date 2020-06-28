@@ -1,5 +1,8 @@
 # Light.EmbeddedResources
 
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://github.com/feO2x/Light.EmbeddedResources/blob/master/LICENSE)
+[![NuGet](https://img.shields.io/badge/NuGet-1.0.0-blue.svg?style=for-the-badge)](https://www.nuget.org/packages/Light.EmbeddedResources/)
+
 ### Get hold of embedded streams the easy way...
 
 Are you one of the C# devs that doesn't know by heart how to get hold of an embedded resource? Light.EmbeddedResources makes it easy for you via extension methods:
@@ -72,3 +75,11 @@ Light.EmbeddedResources is compiled for
 - .NET Core 3.0
 
 and runs on all platforms that support these (like full .NET Framework, Mono, Xamarin, Unity, UWP, etc.).
+
+## How to install
+
+Light.EmbeddedResources is available as a [NuGet package](https://www.nuget.org/packages/Light.EmbeddedResources/):
+
+- via csproj: `<PackageReference Include="Light.EmbeddedResources" Version="1.0.0" />`
+- via .NET CLI: `dotnet add package Light.EmbeddedResources --version 1.0.0`
+- via VS Package Manager: `Install-Package Light.EmbeddedResources -Version 1.0.0`
