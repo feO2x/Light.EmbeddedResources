@@ -1,23 +1,28 @@
 # Light.EmbeddedResources
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://github.com/feO2x/Light.EmbeddedResources/blob/master/LICENSE)
-[![NuGet](https://img.shields.io/badge/NuGet-1.0.0-blue.svg?style=for-the-badge)](https://www.nuget.org/packages/Light.EmbeddedResources/)
+[![NuGet](https://img.shields.io/badge/NuGet-1.1.0-blue.svg?style=for-the-badge)](https://www.nuget.org/packages/Light.EmbeddedResources/)
 
 ### Get hold of embedded streams the easy way...
 
 Are you one of the C# devs that doesn't know by heart how to get hold of an embedded resource? Light.EmbeddedResources makes it easy for you via extension methods:
 
 ```csharp
+// Either get it as a stream
 using var stream = this.GetEmbeddedStream("EmailTemplate.html");
+
+// ...or as a string
+string value = this.GetEmbeddedResource("EmailTemplate.html");
 ```
 
 If you work in a static method, you can use types:
 
 ```csharp
 using var stream = typeof(MyCurrentType).GetEmbeddedStream("EmailTemplate.html");
+string value = typeof(MyCurrentType).GetEmbeddedResource("EmailTemplate.html");
 ```
 
-Just make sure that the instance / the type you call `GetEmbeddedStream` on is in the same assembly and namespace as the resource you want to retrieve.
+Just make sure that the instance / the type you call `GetEmbeddedStream` or `GetEmbeddedResource` on is in the same assembly and namespace as the resource you want to retrieve.
 
 ### ...or copy them to files
 
@@ -72,7 +77,7 @@ public class SomeService
 Light.EmbeddedResources is compiled for
 
 - .NET Standard 2.0
-- .NET Core 3.0
+- .NET 5.0
 
 and runs on all platforms that support these (like full .NET Framework, Mono, Xamarin, Unity, UWP, etc.).
 
@@ -80,6 +85,6 @@ and runs on all platforms that support these (like full .NET Framework, Mono, Xa
 
 Light.EmbeddedResources is available as a [NuGet package](https://www.nuget.org/packages/Light.EmbeddedResources/):
 
-- via csproj: `<PackageReference Include="Light.EmbeddedResources" Version="1.0.0" />`
-- via .NET CLI: `dotnet add package Light.EmbeddedResources --version 1.0.0`
-- via VS Package Manager: `Install-Package Light.EmbeddedResources -Version 1.0.0`
+- via csproj: `<PackageReference Include="Light.EmbeddedResources" Version="1.1.0" />`
+- via .NET CLI: `dotnet add package Light.EmbeddedResources --version 1.1.0`
+- via VS Package Manager: `Install-Package Light.EmbeddedResources -Version 1.1.0`
